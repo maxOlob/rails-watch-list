@@ -1,1 +1,21 @@
-<h1>azbeee</h1>
+<h1>List details: <%= @list.name %></h1>
+
+<h2> Movies: </h2>
+<% @list.movies.each do |movie| %>
+<ul>
+  <li> <%= movie.title %>
+      <%= movie.overview %>
+      <% movie.bookmarks.each do |bookmark| %>
+      <%= bookmark.comment %>
+      <p> <%= link_to "delete a bookmark", bookmark_path(bookmark), method: :delete,
+            data: { confirm: "Are you sure?" } %> </p>
+
+  </li>
+    <% end %>
+</ul>
+<% end %>
+
+<p> <%= link_to "add a new bookmark", new_list_bookmark_path(@list) %> </p>
+<p> <%= link_to "delete this list", list_path(@list), method: :delete,
+            data: { confirm: "Are you sure?" } %> </p>
+<p> <%= link_to "return to all lists", lists_path(@list)%>

@@ -1,9 +1,6 @@
 <h1>add a new list</h1>
 
 <%= simple_form_for [ @list ] do |f| %>
-  <%= f.input :title %>
-   <%= f.input :overview %>
-    <%= f.input :poster_url %>
-     <%= f.input :rating %>
+  <%= f.input :name %>
   <%= f.submit "Submit", class: "btn btn-primary" %>
 <% end %>

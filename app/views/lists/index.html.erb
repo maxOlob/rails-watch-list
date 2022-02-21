@@ -1,1 +1,12 @@
-<h1>zefzede</h1>
+<h1 class="header"> My Lists </h1>
+
+  <ul> <% @lists.each do |list| %>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"/>
+          <div class="card-product-infos">
+              <h2> <li> <%= link_to list.name, list_path(list) %> </li> </h2>
+          </div>
+    </div>
+  <% end %>
+   <%= link_to "add a new list", new_list_path(@list), class:"btn btn-primary"%>
+  </ul>
